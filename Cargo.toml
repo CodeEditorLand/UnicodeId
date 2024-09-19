@@ -1,12 +1,12 @@
 [package]
 name = "unicode-id"
-version = "0.3.4"
+version = "0.3.5"
 authors = [
-	"Boshen <boshenc@gmail.com>",
-	"erick.tryzelaar <erick.tryzelaar@gmail.com>",
-	"kwantam <kwantam@gmail.com>",
-	"Manish Goregaokar <manishsmail@gmail.com>",
-]
+           "Boshen <boshenc@gmail.com>",
+           "erick.tryzelaar <erick.tryzelaar@gmail.com>",
+           "kwantam <kwantam@gmail.com>",
+           "Manish Goregaokar <manishsmail@gmail.com>"
+           ]
 
 homepage = "https://github.com/Boshen/unicode-id"
 repository = "https://github.com/Boshen/unicode-id"
