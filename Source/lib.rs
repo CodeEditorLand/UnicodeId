@@ -29,8 +29,8 @@
 #![forbid(unsafe_code)]
 #![deny(missing_docs)]
 #![doc(
-    html_logo_url = "https://unicode-rs.github.io/unicode-rs_sm.png",
-    html_favicon_url = "https://unicode-rs.github.io/unicode-rs_sm.png"
+	html_logo_url = "https://unicode-rs.github.io/unicode-rs_sm.png",
+	html_favicon_url = "https://unicode-rs.github.io/unicode-rs_sm.png"
 )]
 #![no_std]
 #![cfg_attr(feature = "bench", feature(test, unicode_internals))]
@@ -52,39 +52,39 @@ mod tests;
 
 /// Methods for determining if a character is a valid identifier character.
 pub trait UnicodeID {
-    /// Returns whether the specified character satisfies the 'ID_Start'
-    /// Unicode property.
-    ///
-    /// 'ID_Start' is a Unicode Derived Property specified in
-    /// [UAX #31](http://unicode.org/reports/tr31/#NFKC_Modifications),
-    /// mostly similar to ID_Start but modified for closure under NFKx.
-    fn is_id_start(self) -> bool;
+	/// Returns whether the specified character satisfies the 'ID_Start'
+	/// Unicode property.
+	///
+	/// 'ID_Start' is a Unicode Derived Property specified in
+	/// [UAX #31](http://unicode.org/reports/tr31/#NFKC_Modifications),
+	/// mostly similar to ID_Start but modified for closure under NFKx.
+	fn is_id_start(self) -> bool;
 
-    /// Returns whether the specified `char` satisfies the 'ID_Continue'
-    /// Unicode property.
-    ///
-    /// 'ID_Continue' is a Unicode Derived Property specified in
-    /// [UAX #31](http://unicode.org/reports/tr31/#NFKC_Modifications),
-    /// mostly similar to 'ID_Continue' but modified for closure under NFKx.
-    fn is_id_continue(self) -> bool;
+	/// Returns whether the specified `char` satisfies the 'ID_Continue'
+	/// Unicode property.
+	///
+	/// 'ID_Continue' is a Unicode Derived Property specified in
+	/// [UAX #31](http://unicode.org/reports/tr31/#NFKC_Modifications),
+	/// mostly similar to 'ID_Continue' but modified for closure under NFKx.
+	fn is_id_continue(self) -> bool;
 }
 
 impl UnicodeID for char {
-    #[inline]
-    fn is_id_start(self) -> bool {
-        // Fast-path for ascii idents
-        ('a' <= self && self <= 'z')
-            || ('A' <= self && self <= 'Z')
-            || (self > '\x7f' && derived_property::ID_Start(self))
-    }
+	#[inline]
+	fn is_id_start(self) -> bool {
+		// Fast-path for ascii idents
+		('a' <= self && self <= 'z')
+			|| ('A' <= self && self <= 'Z')
+			|| (self > '\x7f' && derived_property::ID_Start(self))
+	}
 
-    #[inline]
-    fn is_id_continue(self) -> bool {
-        // Fast-path for ascii idents
-        ('a' <= self && self <= 'z')
-            || ('A' <= self && self <= 'Z')
-            || ('0' <= self && self <= '9')
-            || self == '_'
-            || (self > '\x7f' && derived_property::ID_Continue(self))
-    }
+	#[inline]
+	fn is_id_continue(self) -> bool {
+		// Fast-path for ascii idents
+		('a' <= self && self <= 'z')
+			|| ('A' <= self && self <= 'Z')
+			|| ('0' <= self && self <= '9')
+			|| self == '_'
+			|| (self > '\x7f' && derived_property::ID_Continue(self))
+	}
 }
