@@ -1,10 +1,10 @@
-> [!IMPORTANT]
-> Try the optimized version [unicode-id-start](https://github.com/Boshen/unicode-id-start).
+> [!IMPORTANT] Try the optimized version
+> [unicode-id-start](https://github.com/Boshen/unicode-id-start).
 
 # unicode-id
 
-Determine if a `char` is a valid identifier for a parser and/or lexer according to
-[Unicode Standard Annex #31](http://www.unicode.org/reports/tr31/) rules.
+Determine if a `char` is a valid identifier for a parser and/or lexer according
+to [Unicode Standard Annex #31](http://www.unicode.org/reports/tr31/) rules.
 
 This is a clone of [unicode-xid](https://github.com/unicode-rs/unicode-xid).
 
@@ -19,45 +19,45 @@ fn main() {
 
 ## features
 
-unicode-id supports a `no_std` feature. This eliminates dependence
-on std, and instead uses equivalent functions from core.
+unicode-id supports a `no_std` feature. This eliminates dependence on std, and
+instead uses equivalent functions from core.
 
 ## changelog
 
 ### 0.3.5
 
-- Update to Unicode 16.0.0
+-   Update to Unicode 16.0.0
 
 ### 0.3.4
 
-- Update to Unicode 15.1.0
+-   Update to Unicode 15.1.0
 
 ### 0.3.3
 
-- Update to Unicode 15.0.0
+-   Update to Unicode 15.0.0
 
 ### 0.3.2
 
-- Fix clippy warnings
+-   Fix clippy warnings
 
 ### 0.3.0
 
-- Fork repo for unicode-id
-- Update to Unicode 14.0.0
+-   Fork repo for unicode-id
+-   Update to Unicode 14.0.0
 
 ### 0.2.2
 
-- Add an ASCII fast-path
+-   Add an ASCII fast-path
 
 ### 0.2.1
 
-- Update to Unicode 13.0.0
-- Speed up lookup
+-   Update to Unicode 13.0.0
+-   Speed up lookup
 
 ### 0.2.0
 
-- Update to Unicode 12.1.0.
+-   Update to Unicode 12.1.0.
 
 ### 0.1.0
 
-- Initial release.
+-   Initial release.
