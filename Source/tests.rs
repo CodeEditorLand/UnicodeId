@@ -12,15 +12,15 @@
 use std::iter;
 #[cfg(feature = "bench")]
 use std::prelude::v1::*;
+
 #[cfg(feature = "bench")]
 use test::Bencher;
-
 #[cfg(feature = "bench")]
 use UnicodeID;
 
 #[cfg(feature = "bench")]
 #[bench]
-fn cargo_is_id_start(b: &mut Bencher) {
+fn cargo_is_id_start(b:&mut Bencher) {
 	let string = iter::repeat('a').take(4096).collect::<String>();
 
 	b.bytes = string.len() as u64;
@@ -29,7 +29,7 @@ fn cargo_is_id_start(b: &mut Bencher) {
 
 #[cfg(feature = "bench")]
 #[bench]
-fn stdlib_is_id_start(b: &mut Bencher) {
+fn stdlib_is_id_start(b:&mut Bencher) {
 	let string = iter::repeat('a').take(4096).collect::<String>();
 
 	b.bytes = string.len() as u64;
@@ -38,7 +38,7 @@ fn stdlib_is_id_start(b: &mut Bencher) {
 
 #[cfg(feature = "bench")]
 #[bench]
-fn cargo_id_continue(b: &mut Bencher) {
+fn cargo_id_continue(b:&mut Bencher) {
 	let string = iter::repeat('a').take(4096).collect::<String>();
 
 	b.bytes = string.len() as u64;
@@ -47,7 +47,7 @@ fn cargo_id_continue(b: &mut Bencher) {
 
 #[cfg(feature = "bench")]
 #[bench]
-fn stdlib_id_continue(b: &mut Bencher) {
+fn stdlib_id_continue(b:&mut Bencher) {
 	let string = iter::repeat('a').take(4096).collect::<String>();
 
 	b.bytes = string.len() as u64;
@@ -65,10 +65,7 @@ fn test_is_id_start() {
 
 #[test]
 fn test_is_not_id_start() {
-	let chars = [
-		'\x00', '\x01', '0', '9', ' ', '[', '<', '{', '(', '\u{02c2}',
-		'\u{ffff}',
-	];
+	let chars = ['\x00', '\x01', '0', '9', ' ', '[', '<', '{', '(', '\u{02c2}', '\u{ffff}'];
 
 	for ch in &chars {
 		assert!(!super::UnicodeID::is_id_start(*ch), "{}", ch);
@@ -86,8 +83,7 @@ fn test_is_id_continue() {
 
 #[test]
 fn test_is_not_id_continue() {
-	let chars =
-		['\x00', '\x01', ' ', '[', '<', '{', '(', '\u{02c2}', '\u{ffff}'];
+	let chars = ['\x00', '\x01', ' ', '[', '<', '{', '(', '\u{02c2}', '\u{ffff}'];
 
 	for &ch in &chars {
 		assert!(!super::UnicodeID::is_id_continue(ch), "{}", ch);

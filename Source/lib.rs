@@ -8,15 +8,15 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-//! Determine if a `char` is a valid identifier for a parser and/or lexer according to
-//! [Unicode Standard Annex #31](http://www.unicode.org/reports/tr31/) rules.
+//! Determine if a `char` is a valid identifier for a parser and/or lexer
+//! according to [Unicode Standard Annex #31](http://www.unicode.org/reports/tr31/) rules.
 //!
 //! ```rust
 //! use unicode_id::UnicodeID;
 //!
 //! fn main() {
-//!     let ch = 'a';
-//!     println!("Is {} a valid start of an identifier? {}", ch, UnicodeID::is_id_start(ch));
+//! 	let ch = 'a';
+//! 	println!("Is {} a valid start of an identifier? {}", ch, UnicodeID::is_id_start(ch));
 //! }
 //! ```
 //!
@@ -24,7 +24,6 @@
 //!
 //! unicode-id supports a `no_std` feature. This eliminates dependence
 //! on std, and instead uses equivalent functions from core.
-//!
 
 #![forbid(unsafe_code)]
 #![deny(missing_docs)]
