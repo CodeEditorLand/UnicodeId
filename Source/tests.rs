@@ -24,6 +24,7 @@ fn cargo_is_id_start(b:&mut Bencher) {
 	let string = iter::repeat('a').take(4096).collect::<String>();
 
 	b.bytes = string.len() as u64;
+
 	b.iter(|| string.chars().all(super::UnicodeID::is_id_start));
 }
 
@@ -33,6 +34,7 @@ fn stdlib_is_id_start(b:&mut Bencher) {
 	let string = iter::repeat('a').take(4096).collect::<String>();
 
 	b.bytes = string.len() as u64;
+
 	b.iter(|| string.chars().all(char::is_id_start));
 }
 
@@ -42,6 +44,7 @@ fn cargo_id_continue(b:&mut Bencher) {
 	let string = iter::repeat('a').take(4096).collect::<String>();
 
 	b.bytes = string.len() as u64;
+
 	b.iter(|| string.chars().all(super::UnicodeID::is_id_continue));
 }
 
@@ -51,6 +54,7 @@ fn stdlib_id_continue(b:&mut Bencher) {
 	let string = iter::repeat('a').take(4096).collect::<String>();
 
 	b.bytes = string.len() as u64;
+
 	b.iter(|| string.chars().all(char::is_id_continue));
 }
 
