@@ -1,7 +1,7 @@
 extern crate criterion;
 extern crate unicode_id;
 
-use criterion::{criterion_group, criterion_main, BenchmarkId, Criterion, Throughput};
+use criterion::{BenchmarkId, Criterion, Throughput, criterion_group, criterion_main};
 use unicode_id::UnicodeID;
 
 fn bench_unicode_id(c:&mut Criterion) {

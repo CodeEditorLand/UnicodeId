@@ -14,9 +14,9 @@ use std::iter;
 use std::prelude::v1::*;
 
 #[cfg(feature = "bench")]
-use test::Bencher;
-#[cfg(feature = "bench")]
 use UnicodeID;
+#[cfg(feature = "bench")]
+use test::Bencher;
 
 #[cfg(feature = "bench")]
 #[bench]
