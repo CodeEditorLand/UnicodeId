@@ -26,7 +26,7 @@ license-file = "LICENSE"
 name = "unicode-id"
 readme = "README.md"
 repository = "https://github.com/Boshen/unicode-id"
-rust-version = "1.17"
+rust-version = "1.85.0"
 version = "0.3.5"
 
 # [dev-dependencies]
